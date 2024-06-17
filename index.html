@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen App web</title>
+   
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 15;
+            font-family: Arial, sans-serif;
+        }
+        /*Primera parte*/
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-right: 200px;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-container {
+            flex: 2;
+            display: flex;
+            justify-content: space-between;
+            /*padding: 0 15px;*/
+            
+        }
+
+        .text-container a {
+            color: white; /* Añade el color blanco al texto */
+            text-decoration: none; /* Elimina cualquier subrayado en el texto */
+            font-size: 14px;
+        }
+
+        .text-container a:hover {
+            color: #EDA234; /* Cambia el color del texto al pasar el cursor por encima */
+        }
+
+        .bottom-line {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+        /*SEgunda Parte*/
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Para posicionar el borde correctamente */
+        }
+
+        .column:hover {
+            cursor: pointer; /* Cambia el cursor a puntero al pasar el mouse */
+        }
+
+        .column:hover img {
+            opacity: 0.5; /* Opacidad al 50% al pasar el mouse */
+            border: 2px solid #FFA500; /* Borde de 2px sólido naranja */
+        }
+
+        .column h3 {
+            margin-bottom: 5px;
+            border-bottom: 2px solid #FFA500;
+            padding-bottom: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .column p {
+            margin: 0;
+        }
+
+        .bottom-line {
+            border-top: 2px solid #FFA500;
+            margin-top: 20px;
+        }
+
+        /*tercera prate*/
+
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px; /* Reducido de 20px a 10px */
+        }
+
+        .section h3 {
+            margin: 0 0 5px 0; /* Reducido de 10px a 5px */
+        }
+
+        .section img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        .section div {
+            flex: 1;
+            text-align: center;
+            margin: 0 5px; /* Reducido de 10px a 5px */
+        }
+
+        .instruments-section {
+            display: flex;
+            background-color: #222;
+            padding: 10px; /* Reducido de 20px a 10px */
+            margin-top: 10px; /* Reducido de 20px a 10px */
+        }
+
+        .instruments-info {
+            flex: 2;
+        }
+
+        .instruments-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 5px; /* Reducido de 10px a 5px */
+        }
+
+        .instruments-images img {
+            margin-bottom: 5px; /* Reducido de 10px a 5px */
+        }
+
+        .info-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px; /* Reducido de 10px a 5px */
+        }
+
+        .concerts-section {
+            flex: 1;
+            background-color: #222;
+            padding: 10px; /* Reducido de 20px a 10px */
+            margin-left: 10px; /* Reducido de 20px a 10px */
+        }
+
+        .concerts-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .concerts-section li {
+            margin-bottom: 5px; /* Reducido de 10px a 5px */
+        }
+
+        .concerts-section li a {
+            color: #FFA500;
+            text-decoration: none;
+        }
+
+        .category img,
+        .large-image {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.5; /* Opacidad al 50% */
+            border: 2px solid #FFA500; /* Borde de 2px sólido naranja */
+            cursor: pointer; /* Cambio de cursor a puntero */
+
+        }
+
+        .category img:hover {
+            opacity: 1; /* Opacidad completa al pasar el cursor */
+        }
+
+        /* Estilos para las miniaturas y la imagen de mayor dimensión */
+        .small-image {
+            width: 175px;
+            height: 128px;
+            margin-bottom: 5px; /* Reducido de 10px a 5px */
+            cursor: pointer;
+        }
+
+        .large-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #FFA500;
+            opacity: 0.5; /* Opacidad al 50% */
+            cursor: pointer;
+        }
+
+        .large-image:hover {
+            opacity: 1; /* Opacidad completa al pasar el cursor */
+        }
+
+        /* Estilos para el item de la playlist */
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px; /* Reducido de 10px a 5px */
+        }
+
+        .playlist-item:hover {
+            color: hsl(0, 0%, 1%, 100); /* Cambia el color al pasar el mouse */
+        }
+
+        .playlist-item i {
+            margin-right: 5px; /* Reducido de 10px a 5px */
+            color: #FFA500;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- Primera parte -->
+        <section class="container">
+            <div class="image-container">
+                <img src="https://picsum.photos/id/237/150/80" alt="Black Dog">
+            </div>
+            <div class="text-container">
+                <div class="column">
+                    <h3></h3>
+                    <p><a href="#">Violines</a></p>
+                    <p><a href="#">Violas</a></p>
+                    <p><a href="#">Violonchelos</a></p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><a href="#">Flautas</a></p>
+                    <p><a href="#">Cornos</a></p>
+                    <p><a href="#">Tuba</a></p>
+                </div>
+                <div class="column">
+                    <h3></h3>
+                    <p><a href="#">Timbales</a></p>
+                    <p><a href="#">Platillos</a></p>
+                    <p><a href="#">Congas</a></p>
+                </div>
+            </div>
+        </section>
+        <div class="bottom-line"></div>
+
+        <!-- Segunda parte -->
+        <section class="section">
+            <div>
+                <h3>Cuerdas</h3>
+                <img src="https://picsum.photos/id/315/374/226" alt="Cuerdas">
+            </div>
+            <div>
+                <h3>Vientos</h3>
+                <img src="https://picsum.photos/id/304/374/226" alt="Vientos">
+            </div>
+            <div>
+                <h3>Percusión</h3>
+                <img src="https://picsum.photos/id/312/374/226" alt="Percusión">
+            </div>
+        </section>
+        <div class="bottom-line"></div>
+
+        <!-- Tercera parte -->
+        <section class="instruments-section">
+            <div class="instruments-info">
+                <h3>Instrumentos usados en venta</h3>
+                <img src="https://picsum.photos/id/314/471/285" alt="Instrumento Principal" class="large-image">
+                <div class="info-footer">
+                    <span><i class="fa-solid fa-earth-americas"></i> País: Ecuador</span>
+                    <span><i class="fa-solid fa-calendar-days"></i> Año: 2024</span>
+                    <span><i class="fa-solid fa-star"></i> Luthier: Ernesto S.</span>
+                </div>
+            </div>
+            <div class="instruments-images">
+                <img src="https://picsum.photos/id/300/175/128" alt="Instrumento 1" class="small-image">
+                <img src="https://picsum.photos/id/312/175/128" alt="Instrumento 2" class="small-image">
+                <img src="https://picsum.photos/id/314/175/128" alt="Instrumento 3" class="small-image">
+            </div>
+            <div class="concerts-section">
+                <h3>Conciertos</h3>
+                <p>Siempre es una buena oportunidad para escuchar música clásica. Seleccionar el concierto que quieres escuchar.</p>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-circle-play"></i> Concierto #1</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle-play"></i> Concierto #2</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle-play"></i> Concierto #3</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección de footer -->
+        <footer>
+            <div>
+                <p>Suscríbete para más inspiración...</p>
+                <input type="email" placeholder="Tu correo electrónico">
+                <button>Suscríbete</button>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const thumbnails = document.querySelectorAll('.small-image');
+                const largeImage = document.querySelector('.large-image');
+
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', function () {
+                        largeImage.src = thumbnail.src;
+                    });
+                });
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>
